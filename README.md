@@ -1,3 +1,3 @@
 # Arabic-topics-classification
 
-### Demo:[Arabic topics classification webapp] (https://arabic-topic-classification.herokuapp.com/)  
+### Demo:[Arabic topics classification webapp] (https://arabic-topic-classification.herokuapp.com/ "Arabic Text Classification")  
