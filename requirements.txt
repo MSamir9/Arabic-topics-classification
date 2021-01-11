@@ -20,3 +20,4 @@ virtualenvwrapper-win==1.2.5
 webencodings==0.5.1
 werkzeug>=0.15.3
 widgetsnbextension==3.4.2
+textblob==0.15.0
