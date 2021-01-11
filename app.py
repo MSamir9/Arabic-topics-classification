@@ -3,13 +3,13 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 from data_cleaning import clean_text
 from textblob import TextBlob
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 
 
-app = Flask(__name__, template_folder='/content/templates')
-run_with_ngrok(app)
+app = Flask(__name__)
+#run_with_ngrok(app)
 
-model = pickle.load(open('LR_model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -17,9 +17,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    '''
-    For rendering results on HTML GUI
-    '''
+   
     input_text = [str(value) for value in request.form.values()][0]
     blob = TextBlob(input_text)
     trans=blob.translate(from_lang='ar', to='en')
@@ -35,4 +33,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
